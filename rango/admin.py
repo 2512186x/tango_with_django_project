@@ -7,3 +7,10 @@ class PageAdmin(admin.ModelAdmin):
 admin.site.register(Category)
 admin.site.register(Page, PageAdmin)
 
+class CategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug':('name',)}
+    
+admin.site.unregister(Category)
+admin.site.register(Category, CategoryAdmin)
+
+
